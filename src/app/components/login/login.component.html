@@ -1,0 +1,72 @@
+<mat-card *ngIf="userlogin" color="primary">
+    <mat-card-content>
+      <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+        <h2>Log In</h2>
+        <mat-form-field>
+          <input
+            matInput
+            placeholder="Email"
+            [(ngModel)]="username"
+            name="username"
+            required
+          />
+          <mat-error> Please provide a valid email address </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            matInput
+            type="password"
+            placeholder="Password"
+            [(ngModel)]="password"
+            name="password"
+            required
+          />
+          <mat-error> Please provide a valid password </mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary">Login</button>
+      </form>
+      <br>
+      <a (click)="registrarse()">Registre</a>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card color="primary" *ngIf="userregistre">
+    <mat-card-content>
+      <form #registreForm="ngForm" (ngSubmit)="onSubmit()">
+        <h2>Registry</h2>
+        <mat-form-field>
+          <input
+            matInput
+            placeholder="Email"
+            [(ngModel)]="username"
+            name="username"
+            required
+            appCorreu
+            #correuModel="ngModel"
+          />
+          <mat-error>
+            Please provide a valid email address
+            {{ correuModel.errors | json }}</mat-error
+          >
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            matInput
+            type="password"
+            placeholder="Password"
+            [(ngModel)]="password"
+            name="password"
+            required
+            appPassword
+          />
+          <mat-error> Please provide a valid password </mat-error>
+        </mat-form-field>
+  
+        <button mat-raised-button color="primary">Register</button>
+        <h2 *ngIf="registerValid">Register Correct</h2>
+        <h2 *ngIf="registerError"><mat-error> Register Error</mat-error></h2>
+      </form>
+      <br>
+      <a (click)="logearse()">Login</a>
+    </mat-card-content>
+  </mat-card>

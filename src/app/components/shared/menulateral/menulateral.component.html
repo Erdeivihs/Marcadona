@@ -1,0 +1,46 @@
+<mat-toolbar class="header">
+
+    <mat-toolbar-row>
+
+        <div class="display-1">
+
+            <a [routerLink]="['home']"><h3>Marcadona</h3></a>
+
+        </div>
+
+        <mat-button-toggle-group class="header__menu">
+
+            <!-- <button mat-raised-button class="header__menu__content" [routerLink]="['home']" [routerLinkActive]="['active']">Home</button>
+            <button mat-raised-button class="header__menu__content" [routerLink]="['contact']" [routerLinkActive]="['active']">Contact Us</button> -->
+
+
+            <a [routerLink]="['verdura']" class="buttons_menu">
+                <i class="fa-solid fa-carrot"></i>
+            </a>
+
+            <a [routerLink]="['fruta']" class="buttons_menu">
+                <i class="fa-solid fa-apple-whole"></i>
+            </a>
+
+            <a [routerLink]="['carne']" class="buttons_menu">
+                <i class="fa-solid fa-drumstick-bite"></i>
+            </a>
+
+            <a [routerLink]="['pescado']" class="buttons_menu">
+                <i class="fa-solid fa-fish-fins"></i>
+            </a>
+            
+        </mat-button-toggle-group>
+
+        <div class="display-1">
+
+            <a (click)="logout()">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            </a>
+
+        </div>
+
+
+    </mat-toolbar-row>
+
+</mat-toolbar>

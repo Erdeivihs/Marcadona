@@ -1,0 +1,14 @@
+#contenido {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  #comida {
+    margin: 20px;
+  }
+  
+  #comida > img {
+    width: auto;
+    height: 120px;
+  }
+  
